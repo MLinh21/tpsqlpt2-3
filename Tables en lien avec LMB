@@ -57,7 +57,7 @@ CREATE TABLE Iota.ItemEvent
 (
 	ReasonID				Int				FOREIGN KEY REFERENCES Iota.ItemReason (ReasonID),
 	ProductID				Int				FOREIGN KEY REFERENCES Iota.Product (ProductID),
-	MiniBarDoorEventID		Int,
+	MiniBarDoorEventID		Int				FOREIGN KEY REFERENCES Iota.MiniBarDoorEvent (MiniBarDoorEventID),
 	PRIMARY KEY CLUSTERED	(ReasonID, ProductID, MiniBarDoorEventID),
 )
 
@@ -80,7 +80,7 @@ CREATE TABLE Iota.MiniBar
 CREATE TABLE Iota.PlacementReason
 (
 	ReasonID		Int						PRIMARY KEY,
-	Reason			nvarchar(35)			NULL
+	Name			nvarchar(35)			NULL
 )
 
 CREATE TABLE Iota.Placement
